@@ -32,7 +32,7 @@ export default function Hero() {
       {/* Bottom darkening so stats remain readable */}
       <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/50 to-transparent" />
 
-      <div className="relative w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
+      <div className="relative w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-10 sm:pb-16">
         {/* Left-aligned hero content */}
         <div className="max-w-3xl">
           {/* Eyebrow badge */}
@@ -50,7 +50,7 @@ export default function Hero() {
 
           {/* Main heading */}
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-8 sm:mb-14 md:mb-24 tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-white leading-[1.08] mb-6 sm:mb-12 md:mb-20 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
@@ -64,7 +64,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <motion.p
-            className="text-base md:text-xl text-white/80 mb-8 md:mb-12 max-w-xl leading-relaxed"
+            className="text-sm sm:text-base md:text-xl text-white/80 mb-7 md:mb-12 max-w-xl leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
@@ -101,7 +101,7 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 gap-x-6 gap-y-5 sm:flex sm:flex-wrap sm:items-start sm:gap-y-0 sm:divide-x sm:divide-white/15">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-4 sm:flex sm:flex-wrap sm:items-start sm:gap-y-0 sm:divide-x sm:divide-white/15">
             {stats.map((stat, i) => (
               <div key={i} className="flex items-start gap-3 sm:px-6 first:pl-0 last:pr-0">
                 <div>

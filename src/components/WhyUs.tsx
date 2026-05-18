@@ -62,7 +62,7 @@ export default function WhyUs() {
       <div className="page-container">
         {/* Header */}
         <motion.div
-          className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end mb-16"
+          className="grid lg:grid-cols-2 gap-6 lg:gap-24 items-end mb-10 lg:mb-16"
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
@@ -98,7 +98,7 @@ export default function WhyUs() {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }}
-                className="surface-card group p-8 md:p-9"
+                className="surface-card group p-6 md:p-9"
               >
                 <div
                   className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-subtle)] backdrop-blur-sm border border-[#6B705C]/10 transition-transform duration-300 group-hover:scale-110"

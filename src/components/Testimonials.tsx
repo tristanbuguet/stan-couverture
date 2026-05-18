@@ -70,7 +70,7 @@ export default function Testimonials() {
       <div className="page-container">
         {/* Header */}
         <motion.div
-          className="max-w-2xl mx-auto text-center mb-16"
+          className="max-w-2xl mx-auto text-center mb-10 lg:mb-16"
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
@@ -114,7 +114,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }}
-              className="surface-card flex flex-col p-7"
+              className="surface-card flex flex-col p-5 sm:p-7"
             >
               {/* Quote icon */}
               <div className="w-11 h-11 rounded-2xl bg-[#6B705C]/10 backdrop-blur-sm border border-[#6B705C]/10 flex items-center justify-center mb-5 shrink-0">

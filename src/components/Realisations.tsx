@@ -11,7 +11,7 @@ export default function Realisations() {
       <div className="page-container">
         {/* Header */}
         <motion.div
-          className="grid items-end gap-8 mb-14 lg:grid-cols-2 lg:gap-24"
+          className="grid items-end gap-6 mb-10 lg:mb-14 lg:grid-cols-2 lg:gap-24"
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
@@ -56,7 +56,7 @@ export default function Realisations() {
               className="surface-card group block overflow-hidden"
             >
               {/* Photo */}
-              <div className="relative h-60 overflow-hidden bg-slate-100">
+              <div className="relative h-52 sm:h-60 overflow-hidden bg-slate-100">
                 <Image
                   src={project.img}
                   alt={project.title}
@@ -78,7 +78,7 @@ export default function Realisations() {
               </div>
 
               {/* Card content */}
-              <div className="p-6 md:p-7">
+              <div className="p-5 sm:p-6 md:p-7">
                 <div className="mb-3 flex items-center gap-4 text-xs text-slate-400">
                   <span className="flex items-center gap-1.5">
                     <MapPin className="w-3.5 h-3.5" />
@@ -110,7 +110,7 @@ export default function Realisations() {
         >
           <a
             href="#contact"
-            className="btn-primary px-8 py-4 tracking-wide"
+            className="btn-primary px-6 sm:px-8 py-3.5 sm:py-4 tracking-wide w-full sm:w-auto"
           >
             Demander un devis pour votre projet
             <ArrowUpRight className="w-4 h-4" />

@@ -89,7 +89,7 @@ export default function Services() {
 
         {/* ── Header — left-aligned like About / WhyUs ── */}
         <motion.div
-          className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end mb-16"
+          className="grid lg:grid-cols-2 gap-6 lg:gap-24 items-end mb-10 lg:mb-16"
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
@@ -134,7 +134,7 @@ export default function Services() {
                 }}
                 whileHover={{ y: -3, transition: { duration: 0.2, ease: [0.22, 1, 0.36, 1] } }}
                 transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative cursor-pointer overflow-hidden rounded-[28px] min-h-[340px] flex flex-col justify-end shadow-[inset_0_0_0_1px_rgba(0,0,0,0.18),inset_0_0_0_1px_rgba(255,255,255,0.07)]"
+                className="group relative cursor-pointer overflow-hidden rounded-[28px] min-h-[260px] sm:min-h-[340px] flex flex-col justify-end shadow-[inset_0_0_0_1px_rgba(0,0,0,0.18),inset_0_0_0_1px_rgba(255,255,255,0.07)]"
               >
                 {/* Image zoom on hover */}
                 <div
@@ -160,7 +160,7 @@ export default function Services() {
                 </div>
 
                 {/* Content anchored at bottom */}
-                <div className="relative z-10 p-7">
+                <div className="relative z-10 p-5 sm:p-7">
                   <span className="inline-block mb-2.5 text-[11px] font-medium text-white/60 bg-white/10 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/10 select-none">
                     {service.tag}
                   </span>
@@ -178,7 +178,7 @@ export default function Services() {
 
         {/* ── CTA band ── */}
         <motion.div
-          className="dark-panel mt-8 flex flex-col items-start justify-between gap-6 p-8 md:flex-row md:items-center md:p-10"
+          className="dark-panel mt-8 flex flex-col items-start justify-between gap-5 p-6 md:flex-row md:items-center md:p-10"
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
@@ -193,17 +193,17 @@ export default function Services() {
               en Yvelines et Île-de-France.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 shrink-0">
+          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
             <a
               href="tel:+33616395647"
-              className="btn-secondary whitespace-nowrap px-6 py-3 text-sm"
+              className="btn-secondary whitespace-nowrap px-6 py-3 text-sm w-full sm:w-auto justify-center"
             >
               <Phone className="w-4 h-4" />
               06 16 39 56 47
             </a>
             <a
               href="#contact"
-              className="btn-secondary-dark whitespace-nowrap px-6 py-3 text-sm"
+              className="btn-secondary-dark whitespace-nowrap px-6 py-3 text-sm w-full sm:w-auto justify-center"
             >
               Devis gratuit
               <ArrowRight className="w-3.5 h-3.5" />

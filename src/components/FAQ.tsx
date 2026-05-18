@@ -43,7 +43,7 @@ export default function FAQ() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-14"
+          className="text-center mb-10 lg:mb-14"
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
@@ -75,7 +75,7 @@ export default function FAQ() {
               className="surface-card overflow-hidden"
             >
               <button
-                className="w-full flex items-center justify-between gap-4 px-7 py-5 text-left hover:bg-[rgba(107,112,92,0.04)] transition-colors"
+                className="w-full flex items-center justify-between gap-3 px-5 py-4 sm:px-7 sm:py-5 text-left hover:bg-[rgba(107,112,92,0.04)] transition-colors"
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
               >
@@ -106,7 +106,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="px-7 pb-6 text-slate-500 text-sm leading-relaxed border-t border-[#E7E7E7] pt-4">
+                    <div className="px-5 pb-5 sm:px-7 sm:pb-6 text-slate-500 text-sm leading-relaxed border-t border-[#E7E7E7] pt-4">
                       {faq.a}
                     </div>
                   </motion.div>

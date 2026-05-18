@@ -69,7 +69,7 @@ export default function Contact() {
       <div className="page-container">
         {/* Header */}
         <motion.div
-          className="max-w-2xl mx-auto text-center mb-16"
+          className="max-w-2xl mx-auto text-center mb-10 lg:mb-16"
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
@@ -91,7 +91,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-stretch">
+        <div className="grid lg:grid-cols-5 gap-6 lg:gap-16 items-stretch">
           {/* Left info panel */}
           <motion.div
             className="lg:col-span-2 flex flex-col gap-6"
@@ -101,7 +101,7 @@ export default function Contact() {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
             {/* Contact card */}
-            <div className="surface-card surface-card-muted p-7">
+            <div className="surface-card surface-card-muted p-5 sm:p-7">
               <h3 className="font-bold text-[#1C1B1F] text-lg mb-5">Contactez-nous</h3>
               <div className="space-y-4">
                 <a
@@ -166,7 +166,7 @@ export default function Contact() {
             </div>
 
             {/* Trust points */}
-            <div className="surface-card flex-1 p-7">
+              <div className="surface-card flex-1 p-5 sm:p-7">
               <h3 className="font-bold text-[#1C1B1F] text-base mb-4">
                 Pourquoi demander un devis ?
               </h3>
@@ -228,7 +228,7 @@ export default function Contact() {
               {/* Form — always rendered to maintain height */}
               <form
                 onSubmit={handleSubmit}
-                className={`surface-card space-y-5 p-8 ${submitted ? "invisible" : ""}`}
+                className={`surface-card space-y-4 p-5 sm:p-8 ${submitted ? "invisible" : ""}`}
               >
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>

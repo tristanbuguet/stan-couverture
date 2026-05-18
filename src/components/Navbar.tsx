@@ -54,7 +54,7 @@ export default function Navbar() {
                 style={{ transition: "fill 300ms ease" }}
               />
             </svg>
-            <div className="flex flex-col justify-center h-8">
+            <div className="hidden md:flex flex-col justify-center h-8">
               <span
                 className={`text-lg font-bold tracking-tight transition-colors leading-none block ${
                   isScrolled ? "text-slate-900" : "text-white"
@@ -95,7 +95,7 @@ export default function Navbar() {
             </a>
             <a
               href="#contact"
-              className="btn-primary hidden px-5 py-2.5 text-sm md:inline-flex"
+              className="btn-primary hidden px-5 py-2.5 text-sm lg:inline-flex"
             >
               Devis gratuit
             </a>

@@ -32,7 +32,7 @@ export default function About() {
           <span>À propos</span>
         </motion.div>
 
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-24">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-24">
           {/* Left — Text */}
           <motion.div
             initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
@@ -40,7 +40,7 @@ export default function About() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
-            <h2 className="section-title mb-6 max-w-2xl">
+            <h2 className="section-title mb-5 max-w-2xl">
               Des artisans couvreurs
               <br />
               <span className="text-[#1C1B1F]">au service des Yvelines</span>
@@ -87,7 +87,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
-                className={`min-h-[180px] rounded-[28px] border p-6 md:p-8 flex flex-col justify-between ${
+                className={`min-h-[140px] sm:min-h-[180px] rounded-[28px] border p-5 sm:p-6 md:p-8 flex flex-col justify-between ${
                   i === 0
                     ? "bg-[#6B705C] text-white border-[#6B705C] shadow-[0_20px_48px_rgba(17,17,17,0.18)]"
                     : i === 1
@@ -96,7 +96,7 @@ export default function About() {
                 }`}
               >
                 <div className="mb-4">
-                  <span className="text-3xl md:text-5xl font-bold leading-none" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  <span className="text-2xl sm:text-3xl md:text-5xl font-bold leading-none" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                     {n.value}
                   </span>
                   {n.unit && (
