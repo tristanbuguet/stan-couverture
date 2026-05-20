@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, PenLine } from "lucide-react";
 import type { ReviewsData, GoogleReview } from "@/lib/google-reviews";
 
 // ─── Static fallback (shown when Google API is not yet configured) ───────────
@@ -61,6 +62,42 @@ function getInitials(name: string): string {
     return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
   }
   return name.slice(0, 2).toUpperCase();
+}
+
+/** Shows the real Google profile photo with automatic fallback to initials */
+function ReviewAvatar({
+  name,
+  photoUrl,
+  color,
+}: {
+  name: string;
+  photoUrl?: string;
+  color: string;
+}) {
+  const [imgError, setImgError] = useState(false);
+
+  if (photoUrl && !imgError) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={photoUrl}
+        alt={`Photo de ${name}`}
+        width={40}
+        height={40}
+        className="w-10 h-10 rounded-xl object-cover shrink-0"
+        referrerPolicy="no-referrer"
+        onError={() => setImgError(true)}
+      />
+    );
+  }
+
+  return (
+    <div
+      className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold shrink-0 ${color}`}
+    >
+      {getInitials(name)}
+    </div>
+  );
 }
 
 function StarRating({ count }: { count: number }) {
@@ -134,7 +171,7 @@ export default function TestimonialsAnimated({ data }: Props) {
           {reviews.map((t, i) => (
             <motion.a
               key={i}
-              href="https://maps.app.goo.gl/UqxYGCAiuauWQauU7"
+              href={t.reviewUrl ?? "https://maps.app.goo.gl/UqxYGCAiuauWQauU7"}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
@@ -152,18 +189,18 @@ export default function TestimonialsAnimated({ data }: Props) {
                 <Quote className="w-5 h-5 text-[#6B705C]" />
               </div>
 
-              {/* Text */}
-              <p className="mb-6 flex-1 text-[15px] leading-7 text-slate-600">
+              {/* Text — clamped to 5 lines for uniform card height */}
+              <p className="mb-6 text-[15px] leading-7 text-slate-600 line-clamp-5">
                 &ldquo;{t.text}&rdquo;
               </p>
 
-              {/* Author */}
-              <div className="flex items-center gap-3 pt-5 border-t border-[#E7E7E7]">
-                <div
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold ${AVATAR_COLORS[i % AVATAR_COLORS.length]}`}
-                >
-                  {getInitials(t.authorName)}
-                </div>
+              {/* Author — mt-auto pins it to the bottom regardless of text length */}
+              <div className="flex items-center gap-3 pt-5 border-t border-[#E7E7E7] mt-auto">
+                <ReviewAvatar
+                  name={t.authorName}
+                  photoUrl={t.profilePhotoUrl}
+                  color={AVATAR_COLORS[i % AVATAR_COLORS.length]}
+                />
                 <div className="flex-1 min-w-0">
                   <div className="text-slate-900 font-semibold text-sm truncate">
                     {t.authorName}
