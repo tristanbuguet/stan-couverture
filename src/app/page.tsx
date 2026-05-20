@@ -8,8 +8,10 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { getGoogleReviews } from "@/lib/google-reviews";
 
-export default function Home() {
+export default async function Home() {
+  const reviewsData = await getGoogleReviews();
   return (
     <main>
       <Navbar />
@@ -21,7 +23,7 @@ export default function Home() {
       <Testimonials />
       <FAQ />
       <Contact />
-      <Footer />
+      <Footer reviewCount={reviewsData.totalRatings || 85} />
     </main>
   );
 }

@@ -39,15 +39,15 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="section-shell bg-[var(--color-site-bg)]">
+    <section id="faq" className="section-shell section-fade-edges bg-[var(--color-site-bg)]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-10 lg:mb-14"
+          className="text-center mb-14"
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="section-kicker justify-center">
             <span>FAQ</span>
@@ -68,14 +68,14 @@ export default function FAQ() {
           {faqs.map((faq, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
+              initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.05 }}
-              className="surface-card overflow-hidden"
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }}
+              className="surface-card overflow-hidden transition-colors hover:border-[#D0D0D0]"
             >
               <button
-                className="w-full flex items-center justify-between gap-3 px-5 py-4 sm:px-7 sm:py-5 text-left hover:bg-[rgba(107,112,92,0.04)] transition-colors"
+                className="w-full flex items-center justify-between gap-4 px-7 py-5 text-left hover:bg-[#FAF9F8] transition-colors"
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
               >
@@ -85,7 +85,7 @@ export default function FAQ() {
                 <div
                   className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
                     open === i
-                      ? "bg-[#6B705C] text-white"
+                      ? "bg-[var(--color-sage)] text-white"
                       : "bg-slate-100 text-slate-500"
                   }`}
                 >
@@ -103,10 +103,10 @@ export default function FAQ() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="px-5 pb-5 sm:px-7 sm:pb-6 text-slate-500 text-sm leading-relaxed border-t border-[#E7E7E7] pt-4">
+                    <div className="px-7 pb-6 text-slate-500 text-[15px] leading-7 border-t border-[#E7E7E7] pt-4">
                       {faq.a}
                     </div>
                   </motion.div>

@@ -24,10 +24,10 @@ export default function About() {
         {/* Section label */}
         <motion.div
           className="section-kicker"
-          initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
+          initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
           <span>À propos</span>
         </motion.div>
@@ -38,7 +38,7 @@ export default function About() {
             initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
             <h2 className="section-title mb-5 max-w-2xl">
               Des artisans couvreurs
@@ -86,12 +86,12 @@ export default function About() {
                 initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+                transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }}
                 className={`min-h-[140px] sm:min-h-[180px] rounded-[28px] border p-5 sm:p-6 md:p-8 flex flex-col justify-between ${
                   i === 0
-                    ? "bg-[#6B705C] text-white border-[#6B705C] shadow-[0_20px_48px_rgba(17,17,17,0.18)]"
+                    ? "bg-[#6B705C] text-white border-[#6B705C] shadow-[0_10px_28px_rgba(17,17,17,0.10)]"
                     : i === 1
-                    ? "bg-[#5F6F52] text-white border-[#5F6F52] shadow-[0_20px_48px_rgba(17,17,17,0.14)]"
+                    ? "bg-[#5F6F52] text-white border-[#5F6F52] shadow-[0_10px_28px_rgba(17,17,17,0.08)]"
                     : "surface-card surface-card-muted text-[#1C1B1F]"
                 }`}
               >

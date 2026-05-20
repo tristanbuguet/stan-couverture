@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 
 export default function Realisations() {
   return (
-    <section id="realisations" className="section-shell bg-[var(--color-site-bg)]">
+    <section id="realisations" className="section-shell section-fade-edges bg-[var(--color-site-bg)]">
       <div className="page-container">
         {/* Header */}
         <motion.div
@@ -15,7 +15,7 @@ export default function Realisations() {
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
           <div>
             <div className="section-kicker">
@@ -36,23 +36,32 @@ export default function Realisations() {
         </motion.div>
 
         {/* Projects grid */}
-        <motion.div
+        <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-          variants={{ hidden: {}, visible: {} }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ staggerChildren: 0.08 }}
         >
           {projects.map((project, i) => (
             <motion.div
               key={i}
+              className="rounded-[28px]"
               variants={{
-                  hidden: { opacity: 0, y: 24, filter: "blur(6px)" },
-                  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+                hidden: { opacity: 0, y: 24, filter: "blur(6px)" },
+                visible: {
+                  opacity: 1, y: 0, filter: "blur(0px)",
+                  transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 },
+                },
               }}
-              whileHover={{ y: -3, transition: { duration: 0.2, ease: [0.22, 1, 0.36, 1] } }}
-              transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transition = "transform 200ms cubic-bezier(0.22, 1, 0.36, 1)";
+                e.currentTarget.style.transform = "translateY(-3px)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = "";
+              }}
+            >
+            <div
               className="surface-card group block overflow-hidden"
             >
               {/* Photo */}
@@ -96,9 +105,10 @@ export default function Realisations() {
                   {project.description}
                 </p>
               </div>
+            </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* CTA */}
         <motion.div
@@ -106,7 +116,7 @@ export default function Realisations() {
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
           <a
             href="#contact"

@@ -7,7 +7,7 @@ import {
   Layers,
   Sparkles,
   TreePine,
-  Shield,
+  Thermometer,
   Square,
   Filter,
   Paintbrush2,
@@ -20,80 +20,80 @@ const services = [
   {
     icon: Home,
     tag: "Tous matériaux",
-    image: "/Couverture_01.jpg",
-    title: "Couverture",
-    desc: "Pose et rénovation en tuiles, ardoise, bac acier ou zinc. Garantie décennale.",
+    image: "/chantier-1.jpg",
+    title: "Rénovation de toiture",
+    desc: "Remise à neuf complète ou partielle de votre toiture. Tuiles, ardoise, bac acier, zinc — tous matériaux.",
   },
   {
     icon: Droplets,
     tag: "Urgence 7j/7",
-    image: "/Étanchéité_07.jpg",
-    title: "Étanchéité & fuite",
-    desc: "Détection et traitement de fuites, pose de membranes d'étanchéité. Intervention rapide.",
+    image: "/chantier-2.jpg",
+    title: "Réparation & fuite",
+    desc: "Détection et réparation rapide de fuites. Interventions d'urgence disponibles 7j/7 en Yvelines.",
   },
   {
     icon: Layers,
-    tag: "Zinc · Cuivre · Plomb",
-    image: "/Zinguerie_08.jpg",
+    tag: "Zinc · Cuivre",
+    image: "/chantier-3.jpg",
     title: "Zinguerie",
-    desc: "Faîtages, noues, chéneaux, solins et arêtiers. Pose et réfection soignée.",
+    desc: "Pose et réfection de tous les ouvrages en zinc : faîtages, noues, chéneaux, solins, arêtiers.",
   },
   {
     icon: Sparkles,
     tag: "Anti-mousse",
-    image: "/Nettoyage_06.jpg",
-    title: "Nettoyage de toiture",
-    desc: "Nettoyage haute pression, démoussage et traitement fongicide. Toiture propre et durable.",
-  },
-  {
-    icon: Shield,
-    tag: "Hydrofuge",
-    image: "/Peinture.jpg",
-    title: "Peinture & Hydrofugation",
-    desc: "Application d'hydrofuge et peinture de toiture. Protection renforcée contre les intempéries.",
+    image: "/chantier-4.png",
+    title: "Nettoyage & hydrofugation",
+    desc: "Nettoyage haute pression, traitement fongicide, application d'hydrofuge et peinture de toit.",
   },
   {
     icon: TreePine,
     tag: "Garanti 10 ans",
-    image: "/Charpente_03.jpg",
+    image: "/chantier-5.jpg",
     title: "Charpente",
     desc: "Traitement, réparation et remplacement de charpentes bois. Travaux structurels garantis.",
   },
   {
+    icon: Thermometer,
+    tag: "Aide CEE",
+    image: "/chantier-6.jpg",
+    title: "Isolation des combles",
+    desc: "Isolation thermique et acoustique des combles. Éligible aux aides à la rénovation énergétique.",
+  },
+  {
     icon: Square,
     tag: "Pose & SAV",
-    image: "/Velux_04.jpg",
-    title: "Fenêtres de toit & Velux",
-    desc: "Pose, remplacement et réparation de fenêtres de toit. Conseil sur les modèles adaptés.",
+    image: "/hero-bg.jpg",
+    title: "Velux & fenêtres de toit",
+    desc: "Pose, remplacement et réparation de fenêtres de toit et Velux. Conseils personnalisés.",
   },
   {
     icon: Filter,
     tag: "Zinc · Alu · PVC",
-    image: "/Gouttières_05.jpg",
+    image: "/chantier-1.jpg",
     title: "Gouttières",
-    desc: "Pose, nettoyage et réparation en zinc, aluminium ou PVC. Évacuation des eaux pluviales.",
+    desc: "Nettoyage, pose et réparation de gouttières en zinc, aluminium ou PVC. Évacuation optimisée.",
   },
   {
     icon: Paintbrush2,
     tag: "Hydrofuge",
-    image: "/Ravalement_02.jpg",
+    image: "/chantier-2.jpg",
     title: "Ravalement de façades",
-    desc: "Ravalement, enduit, peinture et traitement hydrofuge. Résultat durable et esthétique.",
+    desc: "Ravalement, enduit, peinture et traitement hydrofuge de façades. Résultat durable et esthétique.",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="section-shell bg-[var(--color-site-bg)]">
+    <section id="services" className="section-shell section-fade-edges bg-[var(--color-site-bg)]">
       <div className="page-container">
 
         {/* ── Header — left-aligned like About / WhyUs ── */}
         <motion.div
-          className="grid lg:grid-cols-2 gap-6 lg:gap-24 items-end mb-10 lg:mb-16"
+          className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end mb-16"
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
           <div>
             <div className="section-kicker">
@@ -109,33 +109,43 @@ export default function Services() {
 
           <p className="section-copy">
             De la rénovation complète à la réparation d&apos;urgence, nos artisans
-            couvrent l&apos;ensemble des besoins de votre toiture, avec le même
+            couvrent l&apos;ensemble des besoins de votre toiture — avec le même
             soin du détail, quelle que soit l&apos;intervention.
           </p>
         </motion.div>
 
         {/* ── Services grid ── */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          variants={{ hidden: {}, visible: {} }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ staggerChildren: 0.05 }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (
               <motion.div
                 key={i}
+                className="rounded-[28px]"
+                style={{ boxShadow: "0 1px 0 rgba(28, 27, 31, 0.04), 0 18px 48px rgba(28, 27, 31, 0.06)" }}
                 variants={{
                   hidden: { opacity: 0, y: 24, filter: "blur(6px)" },
-                  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+                  visible: {
+                    opacity: 1, y: 0, filter: "blur(0px)",
+                    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 },
+                  },
                 }}
-                whileHover={{ y: -3, transition: { duration: 0.2, ease: [0.22, 1, 0.36, 1] } }}
-                transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative cursor-pointer overflow-hidden rounded-[28px] min-h-[260px] sm:min-h-[340px] flex flex-col justify-end shadow-[inset_0_0_0_1px_rgba(0,0,0,0.18),inset_0_0_0_1px_rgba(255,255,255,0.07)]"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-60px" }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transition = "transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1)";
+                  e.currentTarget.style.transform = "translateY(-3px)";
+                  e.currentTarget.style.boxShadow = "0 2px 0 rgba(28, 27, 31, 0.03), 0 20px 48px rgba(28, 27, 31, 0.07)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = "";
+                  e.currentTarget.style.boxShadow = "0 1px 0 rgba(28, 27, 31, 0.04), 0 18px 48px rgba(28, 27, 31, 0.06)";
+                }}
               >
+                <div
+                  className="group relative cursor-pointer overflow-hidden rounded-[28px] min-h-[340px] flex flex-col justify-end bg-zinc-900"
+                >
                 {/* Image zoom on hover */}
                 <div
                   className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105"
@@ -150,7 +160,7 @@ export default function Services() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
 
                 {/* Arrow — top right */}
-                <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-10">
+                <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                   <ArrowUpRight className="w-4 h-4 text-white" />
                 </div>
 
@@ -160,7 +170,7 @@ export default function Services() {
                 </div>
 
                 {/* Content anchored at bottom */}
-                <div className="relative z-10 p-5 sm:p-7">
+                <div className="relative z-10 p-7">
                   <span className="inline-block mb-2.5 text-[11px] font-medium text-white/60 bg-white/10 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/10 select-none">
                     {service.tag}
                   </span>
@@ -171,19 +181,14 @@ export default function Services() {
                     {service.desc}
                   </p>
                 </div>
+                </div>
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
 
         {/* ── CTA band ── */}
-        <motion.div
-          className="dark-panel mt-8 flex flex-col items-start justify-between gap-5 p-6 md:flex-row md:items-center md:p-10"
-          initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <div className="dark-panel mt-8 flex flex-col items-start justify-between gap-6 p-8 md:flex-row md:items-center md:p-10">
           <div>
             <p className="mb-1.5 text-xl font-bold text-white">
               Besoin d&apos;une intervention d&apos;urgence ?
@@ -193,23 +198,23 @@ export default function Services() {
               en Yvelines et Île-de-France.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+          <div className="flex flex-wrap gap-3 shrink-0">
             <a
               href="tel:+33616395647"
-              className="btn-secondary whitespace-nowrap px-6 py-3 text-sm w-full sm:w-auto justify-center"
+              className="btn-secondary whitespace-nowrap px-6 py-3 text-sm"
             >
               <Phone className="w-4 h-4" />
               06 16 39 56 47
             </a>
             <a
               href="#contact"
-              className="btn-secondary-dark whitespace-nowrap px-6 py-3 text-sm w-full sm:w-auto justify-center"
+              className="btn-secondary-dark whitespace-nowrap px-6 py-3 text-sm"
             >
               Devis gratuit
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
-        </motion.div>
+        </div>
 
       </div>
     </section>

@@ -73,7 +73,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="section-kicker justify-center">
             <span>Contact & devis</span>
@@ -91,14 +91,14 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-6 lg:gap-16 items-stretch">
+        <div className="grid lg:grid-cols-5 gap-6 lg:gap-10 items-stretch">
           {/* Left info panel */}
           <motion.div
             className="lg:col-span-2 flex flex-col gap-6"
             initial={{ opacity: 0, x: -20, filter: "blur(6px)" }}
             whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
             {/* Contact card */}
             <div className="surface-card surface-card-muted p-5 sm:p-7">
@@ -166,8 +166,8 @@ export default function Contact() {
             </div>
 
             {/* Trust points */}
-              <div className="surface-card flex-1 p-5 sm:p-7">
-              <h3 className="font-bold text-[#1C1B1F] text-base mb-4">
+            <div className="surface-card flex-1 p-5 sm:p-7">
+              <h3 className="font-bold text-[#1C1B1F] text-lg mb-4">
                 Pourquoi demander un devis ?
               </h3>
               <ul className="space-y-3">
@@ -196,7 +196,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 20, filter: "blur(6px)" }}
             whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
           >
             {/* Wrapper maintains form height at all times */}
             <div className="relative">
